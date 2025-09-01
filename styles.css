@@ -1,4 +1,12 @@
 /* Reset e estilos gerais */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333;
+    --text-light: #fff;
+}
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +25,40 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+/* Navegação */
+.main-nav {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.main-nav li {
+    margin: 0;
+}
+
+.main-nav a {
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav .active a {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: var(--accent-color);
 }
 
 /* Cabeçalho */
@@ -91,6 +133,179 @@ header p {
     margin-top: 0.5rem;
 }
 
+/* Páginas de Conteúdo */
+.intro-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.intro-section h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.intro-section p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.product-card .author {
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+}
+
+.product-card .description {
+    color: #444;
+    font-size: 0.95rem;
+    margin: 0.5rem 0 1rem;
+    min-height: 40px;
+}
+
+/* Página Inicial */
+.credits-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.credits-section h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.credits-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
+}
+
+.credits-content {
+    line-height: 1.8;
+    color: #444;
+    text-align: center;
+    padding: 1rem;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.credits-content p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.store-description {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.store-description h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.store-description p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #444;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    color: var(--primary-color);
+    text-align: center;
+    margin: 2rem 0 1.5rem;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
+}
+
+/* Página de Futebol */
+.content-section {
+    margin: 2rem 0;
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.news-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.news-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: var(--primary-color);
+}
+
+.news-card p {
+    padding: 0 1rem 1.5rem;
+    color: #555;
+}
+
 /* Rodapé */
 footer {
     background: #2c3e50;
@@ -115,8 +330,28 @@ footer p {
     }
 }
 
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-wrap: wrap;
+    }
+    
+    .main-nav a {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 480px) {
     .products-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .main-nav a {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
     }
 }
