@@ -17,7 +17,9 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
+    /* Fundo suave com as cores do título (header) */
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.08), rgba(52, 152, 219, 0.08)), #f9f9f9;
+    background-attachment: fixed;
 }
 
 .container {
@@ -154,6 +156,21 @@ header p {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+}
+
+/* Avisos (ex.: conversão de moeda) */
+.notice {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.95rem;
+}
+
+.notice strong {
+    font-weight: 700;
 }
 
 .product-card .author {
@@ -354,4 +371,42 @@ footer p {
         padding: 0.6rem 0.8rem;
         font-size: 0.85rem;
     }
+}
+
+/* Botões de seleção em Álbuns */
+.btn-section {
+    margin: 2rem 0 3rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 1.1rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    font-size: 1.1rem;
+    min-width: 180px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.btn:hover {
+    background-color: #2f80c6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
